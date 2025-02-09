@@ -243,18 +243,18 @@ int main()
     initScreen();
     hideCursor();
 
-    // Ask for player name once, before starting the first game
+    
     getPlayerName();
 
     while (true)
     {
-        // Show rule book only the first time
+        
         if (highestScore == 0)
         {
             showRuleBook();
         }
 
-        // Ask user for difficulty level
+        
         int levelChoice = 0;
         while (levelChoice < 1 || levelChoice > 4)
         {
@@ -277,7 +277,7 @@ int main()
 
         system("cls");
 
-        // Set difficulty based on user input
+        
         int speed = 150;
         int obstacleCount = 9;
         int levelThreshold = 500;
@@ -326,7 +326,7 @@ int main()
             {
                 gotoxy(obs.xCoord, obs.yCoord);
                 setColor(14, 0);
-                cout << "|";
+                cout << "#";
             }
 
             displayScore(score);
