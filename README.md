@@ -140,6 +140,5 @@ In this Snake game:
 
 This project is open-source and available under the [MIT License](LICENSE).
 
----
-```
+
 
