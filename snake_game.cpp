@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #include <conio.h>
 #include <windows.h>
+#include <climits>
 
 using namespace std;
 
@@ -14,7 +15,7 @@ const char DIR_RIGHT = 'R';
 int consoleWidth, consoleHeight;
 string playerName;
 int highestScore = 0;
-int score=0;
+int score = 0;
 
 void initScreen()
 {
@@ -69,7 +70,11 @@ struct Point
 {
     int xCoord, yCoord;
     Point() {}
-    Point(int x, int y) { xCoord = x; yCoord = y; }
+    Point(int x, int y)
+    {
+        xCoord = x;
+        yCoord = y;
+    }
 };
 
 class Snake
@@ -218,7 +223,7 @@ bool askToRestartGame()
     gotoxy(5, 3);
     cout << "Do you want to play again?";
     gotoxy(5, 4);
-    cout << "1. Restart Game";
+    cout << "1. Restart";
     gotoxy(5, 5);
     cout << "2. Quit";
     int choice;
@@ -233,6 +238,18 @@ void getPlayerName()
     system("cls");
     setColor(15, 0);
     gotoxy(5, 1);
+    cout << "*****  *   *  *****  *   *  *****    ****    *****  *   *  *****";
+    gotoxy(5, 2);
+    cout << "*      **  *  *   *  *  *   *        *       *   *  ** **  *     ";
+    gotoxy(5, 3);
+    cout << "*****  * * *  *****  ***    ****     *  **   *****  * * *  ****  ";
+    gotoxy(5, 4);
+    cout << "    *  *  **  *   *  *  *   *        *   *   *   *  *   *  *     ";
+    gotoxy(5, 5);
+    cout << "*****  *   *  *   *  *   *  *****    ****    *   *  *   *  *****";
+    cout << endl
+         << endl;
+    gotoxy(5, 7);
     cout << "Enter your name: ";
     cin >> playerName;
 }
@@ -243,18 +260,16 @@ int main()
     initScreen();
     hideCursor();
 
-    
     getPlayerName();
 
     while (true)
     {
-        
+
         if (highestScore == 0)
         {
             showRuleBook();
         }
 
-        
         int levelChoice = 0;
         while (levelChoice < 1 || levelChoice > 4)
         {
@@ -273,35 +288,46 @@ int main()
             gotoxy(5, 6);
             cout << "Enter your choice (1-4): ";
             cin >> levelChoice;
+
+            if (cin.fail())
+            {
+                cin.clear();
+                cin.ignore(INT_MAX, '\n');
+                levelChoice = 0;
+            }
         }
 
         system("cls");
 
-        
         int speed = 150;
         int obstacleCount = 9;
         int levelThreshold = 500;
         int gameLevel = 1;
+        if (levelChoice == 1)
+        {
+            speed = 140;
+            obstacleCount = 15;
+        }
 
-        if (levelChoice == 2)
+        else if (levelChoice == 2)
         {
             speed = 120;
-            obstacleCount = 22;
+            obstacleCount = 19;
         }
         else if (levelChoice == 3)
         {
             speed = 100;
-            obstacleCount = 25;
+            obstacleCount = 23;
         }
         else if (levelChoice == 4)
         {
             speed = 70;
-            obstacleCount = 30;
+            obstacleCount = 28;
         }
         else
         {
-            speed=130;
-            obstacleCount=24;
+            speed = 100;
+            obstacleCount = 24;
         }
 
         drawBoundary();
@@ -313,11 +339,11 @@ int main()
             obstacles.push_back(Point(rand() % (consoleWidth - 2) + 1, rand() % (consoleHeight - 2) + 1));
         }
 
-        score=0;
+        score = 0;
 
         while (true)
         {
-            
+
             gotoxy(food.xCoord, food.yCoord);
             setColor(13, 0);
             cout << '*';
@@ -348,4 +374,4 @@ int main()
     }
 
     return 0;
-}       
+}
