@@ -1,8 +1,7 @@
 
-
 # 🐍 Snake Game in C++
 
-This is a classic **Snake Game** built using C++ with basic console graphics. The game provides a user-friendly interface, allowing the player to control a snake, eat food to grow, and avoid obstacles or collisions with walls and its own body. The game features different difficulty levels and high score tracking.
+This is a classic *Snake Game* built using C++ with basic console graphics. The game provides a user-friendly interface, allowing the player to control a snake, eat food to grow, and avoid obstacles or collisions with walls and its own body. The game features different difficulty levels and high score tracking.
 
 ## 📝 Table of Contents
 
@@ -11,19 +10,23 @@ This is a classic **Snake Game** built using C++ with basic console graphics. Th
 3. [Setup Instructions](#setup-instructions)
 4. [Game Rules](#game-rules)
 5. [OOP Concepts Used](#oop-concepts-used)
-6. [Gameplay Instructions](#gameplay-instructions)
-7. [Contributing](#contributing)
+6. [Data Structures Used](#data-structures-used)
+7. [Gameplay Instructions](#gameplay-instructions)
+8. [Licence](#License)
 
 ---
 
 ## 🎮 Game Overview
 
 In this Snake game:
-- The snake moves in a 2D grid environment.
-- The goal is to eat food represented by `*` and grow the snake’s length.
-- Players control the snake using arrow keys (or `W`, `A`, `S`, `D`).
-- The snake must avoid hitting walls, obstacles, and itself.
-- The game has multiple difficulty levels (Easy, Medium, High, and Expert) with varying speeds and obstacle density.
+- The snake moves in a **2D grid environment**.
+- The goal is to **eat food** (represented by `*`) and grow the snake’s length.
+- Players control the snake using **arrow keys** (or **W, A, S, D**).
+- The snake must avoid hitting:
+  - **Walls**
+  - **Obstacles**
+  - **Its own body**
+- The game offers multiple **difficulty levels** (Easy, Medium, High, Expert) with varying speeds and obstacle density.
 
 ---
 
@@ -38,15 +41,15 @@ In this Snake game:
 
 ---
 
-## 🛠️ Setup Instructions
+## 🛠 Setup Instructions
 
 1. **Clone the Repository:**
 
    To run this game locally, first, clone this repository.
 
    ```bash
-   git clone https://github.com/DhairyaDave08/-Snake-Game-
-   cd -Snake-Game-
+   git clone https://github.com/DhairyaDave08/Snake-Game
+   cd Snake-Game
    ```
 
 2. **Requirements:**
@@ -71,7 +74,7 @@ In this Snake game:
 
 ## 📜 Game Rules
 
-1. Use the **W**, **A**, **S**, **D** keys (or the arrow keys) to control the snake:
+1. Use the **W, A, S, D** keys (or the arrow keys) to control the snake:
    - **W / Up Arrow**: Move Up
    - **S / Down Arrow**: Move Down
    - **A / Left Arrow**: Move Left
@@ -87,44 +90,56 @@ In this Snake game:
 
 ---
 
-## 🛠️ OOP Concepts Used
+## 🛠 OOP Concepts Used
 
-### **1. Classes and Objects**
-   - **Snake Class**: Handles the snake’s body, direction, and movement. The `Snake` class defines methods for controlling the snake and checking for collisions.
+### 1. **Classes and Objects**
+   - **Snake Class**: Handles the snake’s body, direction, and movement. The Snake class defines methods for controlling the snake and checking for collisions.
    - **Point Class**: Represents coordinates on the grid (used for snake body, food, and obstacles).
 
-### **2. Encapsulation**
-   - The snake’s movement, length, and direction are encapsulated within the `Snake` class. The game’s logic interacts with the class without exposing its internal details.
+### 2. **Encapsulation**
+   - The snake’s movement, length, and direction are encapsulated within the Snake class. The game’s logic interacts with the class without exposing its internal details.
 
-### **3. Abstraction**
-   - The complexity of the snake’s behavior (like collision detection and movement) is abstracted into methods within the `Snake` class, providing a clean interface for interaction in the main game loop.
+### 3. **Abstraction**
+   - The complexity of the snake’s behavior (like collision detection and movement) is abstracted into methods within the Snake class, providing a clean interface for interaction in the main game loop.
 
-### **4. Polymorphism**
+### 4. **Polymorphism**
    - While the game does not fully implement polymorphism, its modular structure allows for future extensions, like adding different types of snakes with varied behaviors using polymorphism.
 
-### **5. Modularity**
+### 5. **Modularity**
    - The game logic is divided into modular functions and classes, making it scalable for future features like adding more power-ups or different obstacles.
 
 ---
 
-## 🕹️ Gameplay Instructions
+## 📚 Data Structures Used
+
+### 1. **Array**
+   - An array is used to represent the grid in the game. The grid is the environment where the snake moves and the food appears.
+
+### 2. **Vector**
+   - The snake's body is represented by a vector, allowing dynamic growth as the snake eats food. The vector stores each part of the snake's body as the game progresses.
+
+### 3. **Queue**
+   - A queue is used to efficiently manage the snake’s movement by storing the previous positions. This helps track the snake’s head and body efficiently.
+
+### 4. **Boolean Array**
+   - A boolean array is used to track the positions of the grid and check for obstacles and collisions. This helps in determining whether a particular grid cell is empty, contains food, or contains an obstacle.
+
+---
+
+## 🕹 Gameplay Instructions
 
 1. **Start Screen**: When the game begins, you'll be prompted to enter your name.
 2. **Difficulty Level**: Choose a difficulty level from 1 (Easy) to 4 (Expert).
-3. **Movement**: Use arrow keys or `W`, `A`, `S`, `D` to move the snake.
+3. **Movement**: Use arrow keys or **W, A, S, D** to move the snake.
 4. **Score**: Your score will be displayed on the top-left. Eating food increases the score.
 5. **Game Over**: If the snake hits the wall, its own body, or an obstacle, the game ends.
 
 ---
 
-## 🤝 Contributing
-
-Feel free to open issues, fork the repository, and contribute enhancements or fixes. For large changes, please open an issue first to discuss what you would like to change.
-
----
-
-### License
+## License
 
 This project is open-source and available under the [MIT License](LICENSE).
 
 ---
+```
+
