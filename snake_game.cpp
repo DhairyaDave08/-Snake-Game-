@@ -87,7 +87,7 @@ public:
 
     Snake(int x, int y)
     {
-        length = 1;
+        length = 3;
         body[0] = Point(x, y);
         direction = DIR_RIGHT;
     }
@@ -254,6 +254,30 @@ void getPlayerName()
     cin >> playerName;
 }
 
+void generateObstacles(vector<Point> &obstacles, int obstacleCount, Snake &snake)
+{
+    obstacles.clear();
+    while (obstacles.size() < obstacleCount)
+    {
+        Point newObstacle(rand() % (consoleWidth - 2) + 1, rand() % (consoleHeight - 2) + 1);
+
+        bool overlap = false;
+        for (int i = 0; i < snake.getLength(); i++)
+        {
+            if (snake.body[i].xCoord == newObstacle.xCoord && snake.body[i].yCoord == newObstacle.yCoord)
+            {
+                overlap = true;
+                break;
+            }
+        }
+
+        if (!overlap)
+        {
+            obstacles.push_back(newObstacle);
+        }
+    }
+}
+
 int main()
 {
     srand(time(0));
@@ -334,10 +358,7 @@ int main()
         Snake snake(consoleWidth / 2, consoleHeight / 2);
         Point food(rand() % (consoleWidth - 2) + 1, rand() % (consoleHeight - 2) + 1);
         vector<Point> obstacles;
-        for (int i = 0; i < obstacleCount; i++)
-        {
-            obstacles.push_back(Point(rand() % (consoleWidth - 2) + 1, rand() % (consoleHeight - 2) + 1));
-        }
+        generateObstacles(obstacles, obstacleCount, snake);
 
         score = 0;
 
