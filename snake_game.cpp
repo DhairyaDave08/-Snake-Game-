@@ -50,7 +50,7 @@ void gotoxy(int x, int y)
 
 void drawBoundary()
 {
-    setColor(11,0);
+    setColor(12, 0);
     for (int i = 0; i < consoleWidth; i++)
     {
         gotoxy(i, 0);
@@ -229,6 +229,7 @@ bool askToRestartGame()
     cout << "2. Quit";
     int choice;
     gotoxy(5, 5);
+    setColor(13, 0);
     cout << "Enter your choice: ";
     cin >> choice;
     return (choice == 1);
@@ -368,14 +369,14 @@ int main()
         {
 
             gotoxy(food.xCoord, food.yCoord);
-            setColor(1, 15);
-            cout << '*';
+            setColor(11, 0);
+            cout << "+";
 
             for (auto &obs : obstacles)
             {
                 gotoxy(obs.xCoord, obs.yCoord);
-                setColor(14, 0);
-                cout << "#";
+                setColor(0, 14);
+                cout << " ";
             }
 
             displayScore(score);
