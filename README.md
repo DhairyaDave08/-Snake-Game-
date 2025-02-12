@@ -20,7 +20,7 @@ This is a classic *Snake Game* built using C++ with basic console graphics. The 
 
 In this Snake game:
 - The snake moves in a **2D grid environment**.
-- The goal is to **eat food** (represented by `*`) and grow the snake’s length.
+- The goal is to **eat food** (represented by `+`) and grow the snake’s length.
 - Players control the snake using **arrow keys** (or **W, A, S, D**).
 - The snake must avoid hitting:
   - **Walls**
