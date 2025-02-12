@@ -1,4 +1,3 @@
-
 #include <bits/stdc++.h>
 #include <conio.h>
 #include <windows.h>
@@ -229,7 +228,7 @@ bool askToRestartGame()
     cout << "2. Quit";
     int choice;
     gotoxy(5, 5);
-    setColor(13, 0);
+    setColor(10, 0);
     cout << "Enter your choice: ";
     cin >> choice;
     return (choice == 1);
@@ -349,7 +348,7 @@ int main()
         else if (levelChoice == 4)
         {
             speed = 70;
-            obstacleCount = 20;
+            obstacleCount = 32;
         }
         else
         {
