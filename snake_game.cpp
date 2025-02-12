@@ -49,7 +49,7 @@ void gotoxy(int x, int y)
 
 void drawBoundary()
 {
-    setColor(7, 0);
+    setColor(11,0);
     for (int i = 0; i < consoleWidth; i++)
     {
         gotoxy(i, 0);
@@ -185,14 +185,14 @@ void getInput(Snake &snake)
 void displayScore(int score)
 {
     gotoxy(5, 0);
-    setColor(15, 0);
+    setColor(10, 0);
     cout << "Score: " << score;
 }
 
 void showRuleBook()
 {
     system("cls");
-    setColor(15, 0);
+    setColor(12, 0);
     gotoxy(5, 1);
     cout << "===================== RULE BOOK =====================";
     gotoxy(5, 2);
@@ -217,7 +217,7 @@ void showRuleBook()
 bool askToRestartGame()
 {
     system("cls");
-    setColor(15, 0);
+    setColor(4, 0);
     gotoxy(5, 1);
     cout << "Game Over! " << playerName << "'s Score: " << score;
     gotoxy(5, 2);
@@ -236,7 +236,7 @@ bool askToRestartGame()
 void getPlayerName()
 {
     system("cls");
-    setColor(15, 0);
+    setColor(10, 0);
     gotoxy(5, 1);
     cout << "*****  *   *  *****  *   *  *****    ****    *****  *   *  *****";
     gotoxy(5, 2);
@@ -298,7 +298,7 @@ int main()
         while (levelChoice < 1 || levelChoice > 4)
         {
             system("cls");
-            setColor(15, 0);
+            setColor(13, 0);
             gotoxy(5, 1);
             cout << "Select difficulty level:";
             gotoxy(5, 2);
@@ -324,29 +324,29 @@ int main()
         system("cls");
 
         int speed = 150;
-        int obstacleCount = 9;
+        int obstacleCount = 14;
         int levelThreshold = 500;
         int gameLevel = 1;
         if (levelChoice == 1)
         {
             speed = 140;
-            obstacleCount = 15;
+            obstacleCount = 18;
         }
 
         else if (levelChoice == 2)
         {
             speed = 120;
-            obstacleCount = 19;
+            obstacleCount = 24;
         }
         else if (levelChoice == 3)
         {
             speed = 100;
-            obstacleCount = 23;
+            obstacleCount = 28;
         }
         else if (levelChoice == 4)
         {
             speed = 70;
-            obstacleCount = 28;
+            obstacleCount = 20;
         }
         else
         {
@@ -366,7 +366,7 @@ int main()
         {
 
             gotoxy(food.xCoord, food.yCoord);
-            setColor(13, 0);
+            setColor(1, 15);
             cout << '*';
 
             for (auto &obs : obstacles)
