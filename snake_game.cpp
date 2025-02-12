@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 #include <conio.h>
 #include <windows.h>
@@ -250,6 +251,7 @@ void getPlayerName()
     cout << endl
          << endl;
     gotoxy(5, 7);
+    setColor(12, 0);
     cout << "Enter your name: ";
     cin >> playerName;
 }
