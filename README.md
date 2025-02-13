@@ -92,37 +92,37 @@ In this Snake game:
 
 ## 🛠 OOP Concepts Used
 
-### 1. **Classes and Objects**
-   - **Snake Class**: Handles the snake’s body, direction, and movement. The Snake class defines methods for controlling the snake and checking for collisions.
-   - **Point Class**: Represents coordinates on the grid (used for snake body, food, and obstacles).
+### 1. **Classes and Objects**: 
+   - The `Snake` class encapsulates the snake’s attributes (body, length, direction) and behaviors (moving, changing direction, eating food).
 
-### 2. **Encapsulation**
-   - The snake’s movement, length, and direction are encapsulated within the Snake class. The game’s logic interacts with the class without exposing its internal details.
+### 2. **Encapsulation**: 
+   - The internal state (snake's body and direction) is hidden within the `Snake` class, with public methods (`move()`, `changeDirection()`, etc.) to interact with it.
 
-### 3. **Abstraction**
-   - The complexity of the snake’s behavior (like collision detection and movement) is abstracted into methods within the Snake class, providing a clean interface for interaction in the main game loop.
+### 3. **Abstraction**: 
+   - The complex logic of moving the snake and handling collisions is abstracted away, allowing the game loop to focus on high-level functionality.
 
-### 4. **Polymorphism**
-   - While the game does not fully implement polymorphism, its modular structure allows for future extensions, like adding different types of snakes with varied behaviors using polymorphism.
-
-### 5. **Modularity**
-   - The game logic is divided into modular functions and classes, making it scalable for future features like adding more power-ups or different obstacles.
 
 ---
 
-## 📚 Data Structures Used
+## Data Structures Used
+The game utilizes several data structures to manage the game state, including:
 
-### 1. **Array**
-   - An array is used to represent the grid in the game. The grid is the environment where the snake moves and the food appears.
+1. **Point Struct**: 
+   - Represents a 2D coordinate (`x`, `y`) on the screen. Used for the snake's body, food, and obstacles.
 
-### 2. **Vector**
-   - The snake's body is represented by a vector, allowing dynamic growth as the snake eats food. The vector stores each part of the snake's body as the game progresses.
+2. **Array of Points**: 
+   - The snake's body is represented as an array of `Point` structures. The array grows as the snake eats food.
 
-### 3. **Queue**
-   - A queue is used to efficiently manage the snake’s movement by storing the previous positions. This helps track the snake’s head and body efficiently.
+3. **Vector of Points**: 
+   - Obstacles are stored dynamically in a `vector` of `Point` structures. Obstacles are generated randomly within the console window.
 
-### 4. **Boolean Array**
-   - A boolean array is used to track the positions of the grid and check for obstacles and collisions. This helps in determining whether a particular grid cell is empty, contains food, or contains an obstacle.
+4. **Class Snake**: 
+   - Manages the snake's movement, length, and direction. It also handles collision detection with walls, itself, and obstacles.
+
+5. **Input Handling**: 
+   - The `_kbhit()` and `_getch()` functions (from `<conio.h>`) are used to detect player input for controlling the snake's direction.
+
+
 
 ---
 
