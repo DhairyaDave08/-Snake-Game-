@@ -253,7 +253,7 @@ void getPlayerName()
     gotoxy(5, 7);
     setColor(12, 0);
     cout << "Enter your name: ";
-    cin >> playerName;
+    getline(cin, playerName);
 }
 
 void generateObstacles(vector<Point> &obstacles, int obstacleCount, Snake &snake)
