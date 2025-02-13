@@ -80,7 +80,7 @@ In this Snake game:
    - **A / Left Arrow**: Move Left
    - **D / Right Arrow**: Move Right
 2. The snake moves continuously in the current direction until you change it.
-3. The snake grows longer when it eats food (indicated by `*`).
+3. The snake grows longer when it eats food (indicated by `+`).
 4. Avoid hitting:
    - **The walls**
    - **The snake's own body**
